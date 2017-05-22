@@ -1,0 +1,33 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>访问出错</title>
+  <style type="text/css">
+	*{margin:0;padding:0;font-family:'Microsoft yahei'}
+	a{text-decoration:none;}
+	body{background:url({% static "img/error.png" %}) no-repeat 0px -40px/cover;}
+	.prompt{display:block;color:#fff;font-size:30px;font-weight:500;margin:330px auto 0;text-align:center;}
+	.back{
+		text-align:center;
+		margin-top:50px;
+	}
+	.back button{
+		border-radius:5%;
+	}
+	.back a{
+		font-size:20px;
+
+	}
+  </style>
+ </head>
+ <body>
+	<span class='prompt'>哦哦~~网走丢了</span>
+	<p class='back'><button><a href="{% url 'asset_list' %}">返回首页</a></button></p>
+ </body>
+</html>

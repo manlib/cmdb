@@ -1,0 +1,13 @@
+{% extends 'base_body.html'  %}
+{% load static %}
+{% block titleblock %}
+{% endblock titleblock %}
+{% block head %}
+{% endblock head %}
+{% block boxblock  %}
+    <h1>资产记录</h1>
+    {% for info in infos %}
+        <p>{{ info }}</p>
+    {% endfor %}
+
+{% endblock boxblock %}

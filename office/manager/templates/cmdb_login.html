@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+{% block titleblock %}资产系统登陆{% endblock titleblock %}
+{% block headblock %}
+	<style type="text/css">
+	*{margin:0;padding:0;font-family:'Microsoft yahei';}
+	body{background:url('{% static "img/bg.jpg" %}')no-repeat center/cover;}
+  </style>
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock headblock %}  
+{% block bodyblock %}
+	<div id="title">
+		<h1>谭洲资产系统</h1>
+	</div>
+	<div id="login">
+		<h3>用户登录</h3>
+		<form action="" method="post">
+			{% csrf_token %}
+			<div class="info">
+				<div class="user">
+					<label for="">用户名:</label><input type="text" placeholder='请输入管理员账号'name='username'/>
+				</div>
+				<div class="password">
+					<label for="">密&nbsp;&nbsp;&nbsp;码:</label><input type="password"placeholder='请输入密码'name='password' />
+				</div>
+				<div class="verima marginB">
+					<div class="v_ipt">
+						<label for="">验证码:</label><input type="text" placeholder='请输入验证码'name='captcha'/>
+					</div>
+					<span id="v_list"><img class='captcha_img' withd=67 height=28 src="{% url 'cmdb_captcha' %}" ></span>
+				</div>
+				<div class='tool'> 
+					<input id='remember' class='remember' type="checkbox" name='remember' value="1"><label for='remember'>记住我</label>
+					<span id='error_message'>{{error}}</span>
+					<span class='v_change'>看不清？换一换</span>
+				</div>
+			</div>
+			<div class="login_btn">
+				<input type="submit" value='登录'/>
+				<input type="button" id='reset'value='重置' />
+			</div>
+		</form>
+	</div>
+<script type="text/javascript" src="{% static 'js/cmdb_login.js' %}"></script>
+{% endblock bodyblock %}
+
+

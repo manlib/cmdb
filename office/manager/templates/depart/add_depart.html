@@ -1,0 +1,11 @@
+{% extends "base_body.html" %}
+{% load bootstrap %}
+{% block boxblock %}
+    <a class="btn btn-primary" href="{% url 'depart_list' %}">返回</a>
+    <h2>新增部门</h2>
+    <form  method="post">
+    {% csrf_token %}
+        {{ depart | bootstrap_horizontal }}
+        <input type="submit" value="提交">
+    </form>
+{% endblock %}
